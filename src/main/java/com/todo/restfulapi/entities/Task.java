@@ -10,12 +10,16 @@ import javax.persistence.*;
 public class Task {
     @Id
     @GeneratedValue
+    @Column(name = "id")
     private Long id;
-
+    @Column(name = "title")
     private String title;
+    @Column(name = "description")
     private String description;
+    @Column(name = "status")
     private int status;
 
+    @Column(name = "user_id")
     @ManyToOne (targetEntity = User.class)
     private User user;
 }

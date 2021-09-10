@@ -12,16 +12,21 @@ import javax.persistence.*;
 public class User {
     @Id
     @GeneratedValue
+    @Column(name = "id")
     private Long id;
 
-    @Column(nullable = false, unique = true)
+    @Column(name = "username", nullable = false, unique = true)
     private String username;
+    @Column(name = "name")
     private String name;
+    @Column(name = "password")
     private String password;
+    @Column(name = "role")
     private String role;
+    @Column(name = "enabled")
     private boolean enabled;
 
-    public User(String username, String password, String role, boolean enabled,String name) {
+    public User(String username, String password, String role, boolean enabled, String name) {
         this.username = username;
         this.name = name;
         this.password = password;
