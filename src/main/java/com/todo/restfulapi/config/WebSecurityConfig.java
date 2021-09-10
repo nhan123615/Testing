@@ -73,7 +73,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .authenticationEntryPoint(new RestAuthenticationEntryPoint())
                 .and()
                 .authorizeRequests()
-                .antMatchers("/api/auth/**", "/oauth2/**").permitAll()
+                .antMatchers("/api/auth/**", "/oauth2/**","h2-console").permitAll()
                 .anyRequest().hasRole(AuthConsts.USER)
                 .and()
                 .oauth2Login()
