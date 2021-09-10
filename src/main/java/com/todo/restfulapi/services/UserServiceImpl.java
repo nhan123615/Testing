@@ -117,7 +117,7 @@ public class UserServiceImpl implements UserDetailsService, UserService {
                 passwordEncoder.encode(registerRequest.getPassword()),
                 AuthConsts.ROLE_USER,
                 true,
-                registerRequest.getPassword()
+                registerRequest.getName()
         ));
     }
 
