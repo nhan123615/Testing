@@ -19,7 +19,7 @@ public class Task {
     @Column(name = "status")
     private int status;
 
-    @Column(name = "user_id")
+    @JoinColumn(name="user_id")
     @ManyToOne (targetEntity = User.class)
     private User user;
 }
