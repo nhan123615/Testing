@@ -108,10 +108,10 @@ public class UserServiceImpl implements UserDetailsService, UserService {
 
     @Override
     public User register(LoginRequest registerRequest) {
-//        User register = userRepository.findByUsername(registerRequest.getUsername());
-//        if (register != null) {
-//            throw new ApiRequestException("Email Address already exist!");
-//        }
+        User register = userRepository.findByUsername(registerRequest.getUsername());
+        if (register != null) {
+            throw new ApiRequestException("Email Address already exist!");
+        }
         return userRepository.save(new User(
                 registerRequest.getUsername(),
                 passwordEncoder.encode(registerRequest.getPassword()),
