@@ -39,7 +39,7 @@ public class TaskServiceImpl implements DAO<Task>,TaskService {
 
     @Override
     public List<Task> findByTitle(String title, Long userId) {
-        return taskRepository.findByTitleContainingAndUserIdInIgnoreCase(title,userId);
+        return taskRepository.findByTitleIgnoreCaseContainingAndUserId(title,userId);
     }
 
     @Override
