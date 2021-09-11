@@ -50,6 +50,7 @@ public class EmailUtils {
 
             return true;
         } catch (Exception e) {
+            System.out.println(e.getStackTrace());
             return false;
 
         }
